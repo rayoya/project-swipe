@@ -1,11 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import RewardsContainer from './src/components/RewardsContainer';
+import { useFonts } from 'expo-font';
+import { useCallback, useEffect } from 'react';
+
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Asap': require('./assets/fonts/Asap-Medium.ttf'),
+    'Asap-Bold': require('./assets/fonts/Asap-Bold.ttf'),
+  });
+
+  useEffect(()=>{
+    async function prepare() {
+      await SplashScreen.preventAutoHideAsync();
+    }
+    prepare();
+  }, [])
+
+  const onLayout = useCallback(async () => {
+    if(fontsLoaded){
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) return null;
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start wofqwfrking on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container} onLayout={onLayout}>
+        <RewardsContainer />
     </View>
   );
 }
@@ -13,8 +37,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     alignItems: 'center',
-    justifyContent: 'center',
+    display: 'flex',
   },
 });
