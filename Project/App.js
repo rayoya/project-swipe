@@ -1,3 +1,4 @@
+<script src="http://localhost:8097"></script>
 import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import RewardsContainer from './src/components/RewardsContainer';
@@ -28,9 +29,11 @@ export default function App() {
 
 
   return (
+    <>
     <View style={styles.container} onLayout={onLayout}>
         <RewardsContainer />
     </View>
+    </>
   );
 }
 

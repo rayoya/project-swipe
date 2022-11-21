@@ -22,23 +22,25 @@ const dummyCoupons = [
 
 const RewardsContainer = () => {
   return (
-    <View style={styles.Container}>
-      <Text style={styles.TitleText}>My Rewards</Text>
-      <ScrollView showsHorizontalScrollIndicator={false} horizontal style={styles.ScrollContainer}>
-        {dummyCoupons.map((coupon: CouponProps, idx) => {
-          // Since items have on stable unique values, idx has been used as the key
-          // TODO: Implement a better unique value method
-          return (
-            <Coupon
-              key={idx}
-              couponType={coupon.couponType}
-              couponValue={coupon.couponValue}
-              caption={coupon.caption}
-            />
-          );
-        })}
-      </ScrollView>
-    </View>
+    <>
+      <View style={styles.Container}>
+        <Text style={styles.TitleText}>My Rewards</Text>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal style={styles.ScrollContainer}>
+          {dummyCoupons.map((coupon: CouponProps, idx) => {
+            // Since items have on stable unique values, idx has been used as the key
+            // TODO: Implement a better unique value method
+            return (
+              <Coupon
+                key={idx}
+                couponType={coupon.couponType}
+                couponValue={coupon.couponValue}
+                caption={coupon.caption}
+              />
+            );
+          })}
+        </ScrollView>
+      </View>
+    </>
   );
 };
 
