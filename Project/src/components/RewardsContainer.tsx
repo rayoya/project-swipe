@@ -1,4 +1,5 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { APP_COLORS } from '../Utilities/Constants';
 import { CouponProps, COUPON_TYPE } from '../Utilities/FieldTypes';
 import Coupon from './Coupon';
 
@@ -10,7 +11,7 @@ const dummyCoupons = [
   },
   {
     couponType: COUPON_TYPE.GIFT,
-    couponValue: 'Free coffee with meal',
+    couponValue: 'Free coffee with your next purchase',
     caption: undefined,
   },
   {
@@ -46,13 +47,10 @@ const RewardsContainer = () => {
 
 const styles = StyleSheet.create({
   Container: {
-    marginTop: 120,
     height: 250,
-    borderColor: 'black',
-    borderWidth: 1,
-    backgroundColor: '#D9C0C0',
+    backgroundColor: APP_COLORS.CONTAINER_BACKGROUND,
     display: 'flex',
-    width: '90%',
+    width: '95%',
     borderRadius: 10,
   },
 
@@ -60,6 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     padding: 16,
     fontFamily: 'Asap',
+    color: APP_COLORS.ORANGE,
   },
 
   ScrollContainer: {
