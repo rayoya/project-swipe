@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: APP_COLORS.COUPON_BACKGROUND,
     display: 'flex',
     width: '100%',
-    marginBottom: 50,
+    marginBottom: 30,
   },
 });
 

@@ -5,7 +5,14 @@ import RewardsContainer from './src/components/RewardsContainer';
 import ShopBar from './src/components/ShopBar'
 import { useFonts } from 'expo-font';
 import { useCallback, useEffect } from 'react';
+import ProgressContainer from './src/components/ProgressContainer';
 
+// TODO: Replace with real data from api
+const fakeRewardData = { 
+  nextRewardIn: 1,
+  totalRewardLength: 5,
+  nextReward: '$5 off next meal'
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -32,7 +39,13 @@ export default function App() {
     <>
       <View style={styles.Container} onLayout={onLayout}>
         <ShopBar />
+        <ProgressContainer 
+          nextRewardIn={fakeRewardData.nextRewardIn}  
+          totalRewardLength={fakeRewardData.totalRewardLength} 
+          nextReward={fakeRewardData.nextReward} 
+        />
         <RewardsContainer />
+
       </View>
     </>
   );

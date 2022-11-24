@@ -8,3 +8,9 @@ export interface CouponProps {
   couponValue: string;
   caption?: string;
 }
+
+export interface RewardProgressProps {
+  nextRewardIn: number;
+  totalRewardLength: number;
+  nextReward: string;
+}
