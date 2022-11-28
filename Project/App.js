@@ -6,6 +6,7 @@ import ShopBar from './src/components/ShopBar'
 import { useFonts } from 'expo-font';
 import { useCallback, useEffect } from 'react';
 import ProgressContainer from './src/components/ProgressContainer';
+import {APP_COLORS} from './src/Utilities/Constants'
 
 // TODO: Replace with real data from api
 const fakeRewardData = { 
@@ -54,7 +55,7 @@ export default function App() {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: APP_COLORS.ORANGE,
     alignItems: 'center',
     display: 'flex',
   },

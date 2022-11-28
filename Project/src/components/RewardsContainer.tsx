@@ -52,6 +52,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     width: '95%',
     borderRadius: 10,
+    shadowOpacity: 1,
+    shadowRadius: 20,
+    elevation: 10,
+    shadowColor: APP_COLORS.ORANGE,
   },
 
   TitleText: {
